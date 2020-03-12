@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
+import "moment/locale/es";
 
 const Covid = () => {
   const [confirmed, setConfirmed] = useState("");
@@ -35,7 +36,10 @@ const Covid = () => {
       <br />
       Fallecidos: <span className="text-danger">{deaths}</span>
       <br />
-      Actualizado: <Moment fromNow>{lastUpdate}</Moment>
+      Actualizado:{" "}
+      <Moment fromNow locale="es">
+        {lastUpdate}
+      </Moment>
     </span>
   );
 };
