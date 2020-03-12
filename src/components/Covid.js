@@ -30,13 +30,16 @@ const Covid = () => {
     <span>
       {loading && <h1>Cargando ...</h1>}
       <h1>Casos COVID-19 ESPAÑA</h1>
-      Confirmados: <span className="text-primary">{confirmed}</span>
-      <br />
-      Recuperados: {recovered}
-      <br />
-      Fallecidos: <span className="text-danger">{deaths}</span>
-      <br />
-      Actualizado:{" "}
+      <div className="row">
+        <div className="col">
+          Confirmados: <span className="text-primary">{confirmed}</span>
+        </div>
+        <div className="col">Recuperados: {recovered}</div>
+        <div className="col mt-3">
+          Fallecidos: <span className="text-danger">{deaths}</span>
+        </div>
+      </div>
+      Actualizado:
       <Moment fromNow locale="es">
         {lastUpdate}
       </Moment>
